@@ -89,14 +89,3 @@ class Node:
 
   def __repr__(self):
         return self.data
-
-
-myList = LinkedList()
-myList.append('5')
-myList.append('6')
-myList.prepend('4')
-myList.insert('7', 4)
-print(myList)
-myList.remove(2)
-print(myList)
-print(myList.tail)
