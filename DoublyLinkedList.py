@@ -28,12 +28,14 @@ class LinkedList:
       return
 
     self.tail.next = node
+    node.prev = self.tail
     self.tail = node
     self.length+=1
 
   def prepend(self,value):
      node = Node(value)
      node.next = self.head
+     self.head.prev = node
      self.head = node
      self.length+=1
     
@@ -53,7 +55,9 @@ class LinkedList:
     for currentNode in self:
         if index == targetIndex:
             node.next=currentNode
+            currentNode.prev=node
             previous_node.next=node
+            node.prev=previous_node
             self.length+=1
             return
         previous_node=currentNode
@@ -75,6 +79,7 @@ class LinkedList:
       for currentNode in self:
           if index == target:
               previous_node.next=currentNode.next
+              Node(currentNode.next).prev = previous_node
               currentNode.next=None
               if target == self.length-1:
                   self.tail = previous_node
@@ -87,6 +92,9 @@ class Node:
   def __init__(self,data):
     self.data = data
     self.next = None
+    self.prev = None
 
   def __repr__(self):
         return self.data
+
+
