@@ -1,1 +1,1 @@
-# Implementation of a singly linked list in python.
+# Implementation of Data Structures in Python
