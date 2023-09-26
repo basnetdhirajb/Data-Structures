@@ -70,7 +70,7 @@ class LinkedList:
           self.head = self.head.next
           Node(self.head).prev = None
           return
-      
+       
       previous_node = self.head
       for currentNode in self:
           if index == target:
@@ -83,6 +83,19 @@ class LinkedList:
           previous_node = currentNode
           index+=1
               
+  def reverse(self):
+    prev = None
+    curr = self.head
+    self.tail = self.head
+    while curr is not None:
+      temp = curr.next
+      curr.next = prev
+      prev = curr
+      curr = temp
+    self.head = prev
+    return self
+    
+    
 class Node:
   def __init__(self,data):
     self.data = data
@@ -90,3 +103,10 @@ class Node:
 
   def __repr__(self):
         return self.data
+      
+myList = LinkedList()
+myList.append('A')
+myList.append('B')
+myList.append('C')
+myList.append('D')
+print(myList.reverse())
