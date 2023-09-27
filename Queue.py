@@ -43,6 +43,7 @@ class Queue:
     def dequeue(self):
         if not self.isEmpty():
             self.top = self.top.next
+            length-=1
         return 'Empty Queue'
     
     
