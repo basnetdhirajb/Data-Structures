@@ -68,7 +68,6 @@ class LinkedList:
       
       if target == 0:
           self.head = self.head.next
-          Node(self.head).prev = None
           return
        
       previous_node = self.head
@@ -109,4 +108,6 @@ myList.append('A')
 myList.append('B')
 myList.append('C')
 myList.append('D')
-print(myList.reverse())
+myList.remove(0)
+myList.remove(0)
+print(myList)
