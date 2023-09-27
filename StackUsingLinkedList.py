@@ -29,7 +29,8 @@ class Stack:
         return self.top==None
     
     def peek(self):
-        return self.top.data
+        if not self.isEmpty():
+            return self.top.data
         
     def push(self,value):
         node = Node(value)
@@ -50,15 +51,3 @@ class Stack:
             return
         return 'Empty Stack'
     
-myStack = Stack()
-myStack.push('discord')
-myStack.push('udemy')
-myStack.push('google')
-print(myStack)
-myStack.pop()
-print(myStack)
-myStack.pop()
-print(myStack)
-
-
-

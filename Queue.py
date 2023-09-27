@@ -28,7 +28,8 @@ class Queue:
         return self.top == None
     
     def peek(self):
-        return self.top.data
+        if self.top:
+            return self.top.data
     
     def enqueue(self,value):
         node = Node(value)
@@ -43,20 +44,6 @@ class Queue:
     def dequeue(self):
         if not self.isEmpty():
             self.top = self.top.next
-            length-=1
+            self.length-=1
         return 'Empty Queue'
-    
-    
-myQueue = Queue()
-myQueue.enqueue('discord')
-myQueue.enqueue('udemy')
-myQueue.enqueue('google')
-print(myQueue)
-print(myQueue.peek())
-
-myQueue.dequeue()
-print(myQueue)
-print(myQueue.peek())
-
-
 
